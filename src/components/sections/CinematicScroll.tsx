@@ -26,7 +26,7 @@ export default function CinematicScroll() {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full h-[400vh] bg-[#000000]"
+      className="relative w-full h-[400vh] bg-[#060d06]"
     >
       <div className="sticky top-0 w-full h-screen overflow-hidden flex flex-col items-center justify-center">
         {/* Parallax background grid */}
@@ -64,7 +64,7 @@ export default function CinematicScroll() {
             className="absolute text-5xl md:text-7xl lg:text-9xl font-bold text-white tracking-tighter w-full"
             style={{ opacity: text2Opacity, scale: text2Scale }}
           >
-            Few have <span className="text-gradient">systems.</span>
+            We have <span className="text-gradient">systems.</span>
           </motion.h2>
 
           <motion.h2 

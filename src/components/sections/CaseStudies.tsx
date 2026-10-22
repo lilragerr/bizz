@@ -39,7 +39,7 @@ export default function CaseStudies() {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-65%"]);
 
   return (
-    <section id="work" ref={targetRef} className="relative h-[300vh] bg-[#000000]">
+    <section id="work" ref={targetRef} className="relative h-[300vh] bg-[#060d06]">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         
         {/* Section Header */}
@@ -69,35 +69,8 @@ export default function CaseStudies() {
                   opacity: 0.7,
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div className="flex justify-between items-end mb-4">
-                  <div>
-                    {/* Frosted glass pill badge */}
-                    <span 
-                      className="inline-block px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 backdrop-blur-md text-white border border-white/20 bg-white/5"
-                    >
-                      {project.category}
-                    </span>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white">
-                      {project.title}
-                    </h3>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Impact</p>
-                    <p className="text-2xl font-bold text-gradient">{project.metrics}</p>
-                  </div>
-                </div>
-                
-                {/* Animated Gradient Line */}
-                <div className="w-full h-[2px] mt-6 relative overflow-hidden rounded-full bg-white/10">
-                  <div 
-                    className="-translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out absolute inset-0 rounded-full bg-gradient-to-r from-white to-white/40"
-                  />
-                </div>
-              </div>
             </div>
           ))}
         </motion.div>

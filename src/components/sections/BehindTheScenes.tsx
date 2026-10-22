@@ -275,7 +275,7 @@ export default function BehindTheScenes() {
   };
 
   return (
-    <section id="our-works" className="relative w-full py-28 bg-[#000000] overflow-hidden">
+    <section id="our-works" className="relative w-full py-28 bg-[#060d06] overflow-hidden">
       {/* Subtle ambient orbs — lightweight radial gradients only, no blur */}
       <div className="absolute inset-0 pointer-events-none z-0" aria-hidden>
         <div
@@ -502,10 +502,6 @@ export default function BehindTheScenes() {
                   className="w-full h-full object-contain"
                   style={{ maxHeight: "70vh" }}
                 />
-                <div className="absolute top-0 left-0 right-0 p-5 bg-gradient-to-b from-black/80 to-transparent pointer-events-none">
-                  <h3 className="text-xl md:text-2xl font-bold text-white">{currentModalWork.title}</h3>
-                  <p className="text-white/60 text-xs md:text-sm mt-1 max-w-lg">{currentModalWork.description}</p>
-                </div>
               </motion.div>
 
               <button
@@ -644,32 +640,21 @@ function GridCard({ item, hoveredWorkId, setHoveredWorkId, onCardClick }: GridCa
         }}
       />
 
-      {/* Simple gradient overlay — no backdrop-filter (GPU-friendly) */}
+      {/* Subtle dark gradient overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.08) 55%, transparent 100%)" }}
+        style={{ background: "linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 60%)" }}
       />
 
-      {/* Top badge row */}
-      <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none z-10">
-        <span className="px-2 py-0.5 rounded-full bg-black/65 text-[8px] uppercase tracking-widest font-bold text-white border border-white/[0.12]">
-          {item.category}
-        </span>
-        <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/65 border border-white/[0.12]">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[8px] uppercase text-white/60 font-mono">Live</span>
-        </span>
-      </div>
-
-      {/* Bottom info */}
-      <div className="absolute bottom-0 left-0 right-0 p-3.5 md:p-4 z-10 pointer-events-none">
-        <h3 className="text-sm md:text-base font-bold text-white line-clamp-1">{item.title}</h3>
-        <div className="mt-1.5 flex items-center justify-between">
-          <span className="text-[9px] font-mono text-white/35">{item.tag}</span>
-          <div className="flex items-center gap-1 text-white/70 group-hover:text-white transition-colors duration-200">
-            <span className="text-[9px] uppercase tracking-wider font-semibold">Play</span>
-            <Maximize2 size={10} />
-          </div>
+      {/* Minimal hover expand hint only — no text */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center"
+      >
+        <div
+          className="w-10 h-10 rounded-full flex items-center justify-center"
+          style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)" }}
+        >
+          <Maximize2 size={16} className="text-white" />
         </div>
       </div>
     </div>

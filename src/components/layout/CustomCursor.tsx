@@ -66,32 +66,32 @@ export default function CustomCursor() {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
       scale: 1,
-      backgroundColor: "rgba(255, 255, 255, 0)",
-      border: "1.5px solid rgba(255, 255, 255, 0.4)",
-      boxShadow: "0 0 10px rgba(255, 255, 255, 0.1)",
+      backgroundColor: "rgba(74, 222, 128, 0)",
+      border: "1.5px solid rgba(74, 222, 128, 0.6)",
+      boxShadow: "0 0 10px rgba(74, 222, 128, 0.2)",
     },
     hover: {
       x: mousePosition.x - 24,
       y: mousePosition.y - 24,
       scale: 1.5,
-      backgroundColor: "rgba(255, 255, 255, 0.08)",
-      border: "1.5px solid rgba(255, 255, 255, 0.8)",
-      boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)",
+      backgroundColor: "rgba(74, 222, 128, 0.12)",
+      border: "1.5px solid rgba(74, 222, 128, 0.9)",
+      boxShadow: "0 0 20px rgba(74, 222, 128, 0.35)",
     },
     clicking: {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
       scale: 0.8,
-      backgroundColor: "rgba(255, 255, 255, 0.2)",
-      border: "1.5px solid rgba(255, 255, 255, 0.9)",
-      boxShadow: "0 0 25px rgba(255, 255, 255, 0.3)",
+      backgroundColor: "rgba(74, 222, 128, 0.25)",
+      border: "1.5px solid #4ade80",
+      boxShadow: "0 0 25px rgba(74, 222, 128, 0.5)",
     },
   };
 
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-screen"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[999999]"
         variants={variants}
         animate={isClicking ? "clicking" : isHovering ? "hover" : "default"}
         transition={{
@@ -101,12 +101,12 @@ export default function CustomCursor() {
           mass: 0.5,
         }}
       />
-      {/* Inner dot — white */}
+      {/* Inner dot — green */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[10000]"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[999999]"
         style={{
-          background: "#ffffff",
-          boxShadow: "0 0 8px rgba(255, 255, 255, 0.8)",
+          background: "#4ade80",
+          boxShadow: "0 0 8px rgba(74, 222, 128, 0.9)",
         }}
         animate={{
           x: mousePosition.x - 4,

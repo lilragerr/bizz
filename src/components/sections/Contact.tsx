@@ -42,7 +42,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative w-full py-32 bg-[#000000] overflow-hidden">
+    <section id="contact" className="relative w-full py-32 bg-[#060d06] overflow-hidden">
       {/* Animated Background Grid — white/grey tint */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px]" />
@@ -66,12 +66,19 @@ export default function Contact() {
             <div className="space-y-4">
               <div>
                 <p className="text-sm text-gray-500 uppercase tracking-widest mb-1">HQ</p>
-                <p className="text-white font-medium">Pune, India</p>
+                <p className="text-white font-medium">A-904-906, SNS Atria, Vesu</p>
+                <p className="text-white/60 text-sm">Surat, Gujarat 395007, India</p>
               </div>
               <div>
                 <p className="text-sm text-gray-500 uppercase tracking-widest mb-1">Email</p>
-                <a href="mailto:info@bizzbuildconsulting.com" className="text-white font-medium hover:text-gradient transition-colors">
-                  info@bizzbuildconsulting.com
+                <a href="mailto:sales@bizz-build.com" className="text-white font-medium hover:text-[#4ade80] transition-colors">
+                  sales@bizz-build.com
+                </a>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 uppercase tracking-widest mb-1">Phone</p>
+                <a href="tel:+918799178377" className="text-white font-medium hover:text-[#4ade80] transition-colors">
+                  +91 87991 78377
                 </a>
               </div>
             </div>

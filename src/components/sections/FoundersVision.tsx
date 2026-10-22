@@ -4,7 +4,7 @@ import { Sparkles, Quote } from "lucide-react";
 
 export default function FoundersVision() {
   return (
-    <section id="vision" className="relative w-full py-32 bg-[#000000] overflow-hidden">
+    <section id="vision" className="relative w-full py-32 bg-[#060d06] overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: "rgba(255, 255, 255, 0.02)" }} />
       <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] rounded-full blur-[150px]" style={{ background: "rgba(255, 255, 255, 0.02)" }} />

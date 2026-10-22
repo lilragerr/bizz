@@ -66,28 +66,26 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Connect</h4>
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full flex items-center justify-center glass-card hover-trigger transition-all duration-300 border-shimmer"
-                  whileHover={{
-                    scale: 1.15,
-                    rotate: 5,
-                    boxShadow: "0 0 25px rgba(255, 255, 255, 0.15)",
-                    borderColor: "#ffffff",
-                  }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <span className="text-white">{social.icon}</span>
-                  <span className="sr-only">{social.name}</span>
-                </motion.a>
-              ))}
-            </div>
+            <h4 className="text-white font-bold mb-6 text-lg">Contact</h4>
+            <ul className="space-y-3">
+              <li>
+                <p className="text-xs text-white/30 uppercase tracking-widest mb-1">Address</p>
+                <p className="text-bizz-text-muted text-sm">A-904-906, SNS Atria, Vesu</p>
+                <p className="text-bizz-text-muted text-sm">Surat, Gujarat 395007</p>
+              </li>
+              <li>
+                <p className="text-xs text-white/30 uppercase tracking-widest mb-1">Email</p>
+                <a href="mailto:sales@bizz-build.com" className="text-bizz-text-muted hover:text-white transition-colors text-sm hover-trigger">
+                  sales@bizz-build.com
+                </a>
+              </li>
+              <li>
+                <p className="text-xs text-white/30 uppercase tracking-widest mb-1">Phone</p>
+                <a href="tel:+918799178377" className="text-bizz-text-muted hover:text-white transition-colors text-sm hover-trigger">
+                  +91 87991 78377
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,9 +14,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
+    { name: "Home",     href: "#" },
     { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Works", href: "#our-works" },
+    { name: "About",    href: "#about" },
+    { name: "Insights", href: "#our-works" },
+    { name: "Contact",  href: "#contact" },
   ];
 
   return (
@@ -27,20 +29,28 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="container mx-auto px-6 md:px-12">
+        <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div
-            className={`flex items-center justify-between rounded-full px-6 py-3 transition-all duration-500 ${
-              scrolled
-                ? "bg-black/70 backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.8)]"
-                : "bg-transparent border border-transparent"
-            }`}
+            className="flex items-center justify-between rounded-full px-6 py-3 transition-all duration-500"
+            style={{
+              background: scrolled
+                ? "rgba(6, 13, 6, 0.45)"
+                : "rgba(255, 255, 255, 0.06)",
+              backdropFilter: "blur(24px) saturate(180%)",
+              WebkitBackdropFilter: "blur(24px) saturate(180%)",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
+              boxShadow: scrolled
+                ? "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)"
+                : "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06)",
+            }}
           >
-            {/* Logo */}
-            <a href="#" className="flex items-center group">
+            {/* Logo — forced white */}
+            <a href="#" className="flex items-center gap-2 group">
               <img
                 src="/bizzbuildlogo.png"
-                alt="BizzBuild Logo"
-                className="h-8 w-auto invert brightness-200"
+                alt="BizzBuild Consulting Logo"
+                className="h-14 w-auto"
+                style={{ filter: "brightness(0) invert(1)" }}
               />
             </a>
 
@@ -50,10 +60,10 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="relative text-sm font-medium text-white/50 hover:text-white transition-colors group py-1"
+                  className="relative text-sm font-medium text-white/60 hover:text-white transition-colors group py-1"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300 rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#4ade80] group-hover:w-full transition-all duration-300 rounded-full" />
                 </a>
               ))}
             </nav>
@@ -62,15 +72,20 @@ export default function Navbar() {
             <div className="hidden md:block">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black text-sm font-bold uppercase tracking-widest rounded-full hover:bg-neutral-200 transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-5 py-2.5
+                           border border-[#4ade80] text-[#4ade80] text-sm font-bold
+                           uppercase tracking-widest rounded-full
+                           hover:bg-[#4ade80] hover:text-[#060d06]
+                           transition-all duration-300 hover-trigger"
               >
-                Get Started
+                Let&apos;s Build
+                <ArrowUpRight size={14} />
               </a>
             </div>
 
             {/* Mobile toggle */}
             <button
-              className="md:hidden p-2 rounded-full border border-white/10 text-white"
+              className="md:hidden p-2 rounded-full border border-white/20 text-white/70"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -83,7 +98,8 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
+            style={{ background: "#060d06" }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -94,8 +110,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-3xl font-black text-white uppercase tracking-widest hover:text-white/50 transition-colors"
-                style={{ fontFamily: "var(--font-playfair)" }}
+                className="text-3xl font-black text-white uppercase tracking-widest hover:text-[#4ade80] transition-colors"
               >
                 {link.name}
               </a>
@@ -103,9 +118,9 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 px-8 py-4 bg-white text-black text-sm font-bold uppercase tracking-widest rounded-full"
+              className="mt-4 px-8 py-4 bg-[#4ade80] text-[#060d06] text-sm font-bold uppercase tracking-widest rounded-full"
             >
-              Get Started
+              Let&apos;s Build
             </a>
           </motion.div>
         )}
